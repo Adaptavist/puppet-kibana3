@@ -2,21 +2,21 @@
 #
 # Author: Alejandro Figueroa
 class kibana3::install {
-  if $::kibana3::manage_git {
+  if str2bool($::kibana3::manage_git) {
     require 'git'
   }
 
   if $::kibana3::k3_folder_owner {
     $_ws_user = $::kibana3::k3_folder_owner
-  } elsif $::kibana3::manage_ws {
+  } elsif str2bool($::kibana3::manage_ws) {
     $_ws_user = $::apache::params::user
   } else {
     $_ws_user = 'root'
   }
 
-  if $::kibana3::manage_ws {
+  if str2bool($::kibana3::manage_ws) {
 
-    if $::kibana3::manage_git_repository {
+    if str2bool($::kibana3::manage_git_repository) {
       Vcsrepo[$::kibana3::k3_install_folder] -> Apache::Vhost['kibana3']
     }
 
@@ -36,7 +36,7 @@ class kibana3::install {
 
   }
 
-  if $::kibana3::manage_git_repository {
+  if str2bool($::kibana3::manage_git_repository) {
     vcsrepo {
       $::kibana3::k3_install_folder:
       ensure   => present,

@@ -35,10 +35,10 @@ class kibana3::params {
   $k3_release        = 'a50a913'
   $k3_clone_url      = 'https://github.com/elasticsearch/kibana.git'
 
-  $manage_git            = true
-  $manage_git_repository = true
+  $manage_git            = "true"
+  $manage_git_repository = "true"
 
-  $manage_ws        = true
+  $manage_ws        = "true"
   $ws_servername    = $::fqdn
   $ws_port          = '80'
   $ws_default_vhost = false

@@ -2,14 +2,14 @@
 #
 # Author: Alejandro Figueroa
 class kibana3::uninstall {
-  if $::kibana3::manage_git {
+  if str2bool($::kibana3::manage_git) {
     package {
       'git':
       ensure => absent,
     }
   }
 
-  if $::kibana3::manage_ws {
+  if str2bool($::kibana3::manage_ws) {
     class {
       'apache':
       package_ensure => absent,

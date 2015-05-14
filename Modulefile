@@ -1,5 +1,5 @@
 name    'thejandroman-kibana3'
-version '0.0.4'
+version '0.0.5'
 source 'https://github.com/thejandroman/puppet-kibana3'
 author 'thejandroman'
 license 'Apache License, Version 2.0'

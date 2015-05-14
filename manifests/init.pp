@@ -116,9 +116,6 @@ class kibana3 (
     $k3_folder_owner,$k3_install_folder,$k3_release,$k3_clone_url,
     $ws_port)
 
-  validate_bool($manage_git,$manage_ws,$manage_git_repository,
-    $ws_default_vhost)
-
   validate_array($config_panel_names)
 
   validate_hash($ws_extras)

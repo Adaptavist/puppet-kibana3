@@ -2,7 +2,7 @@
 #
 # Author: Alejandro Figueroa
 class kibana3::config {
-  if $::kibana3::manage_ws {
+  if str2bool($::kibana3::manage_ws) {
     file {
       "${::kibana3::k3_install_folder}/src/config.js":
       ensure  => present,
