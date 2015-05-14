@@ -3,7 +3,9 @@
 # Author: Alejandro Figueroa
 class kibana3::install {
   if str2bool($::kibana3::manage_git) {
-    require 'git'
+    if ( !defined(Package['git']) ){
+      include git
+    }
   }
 
   if $::kibana3::k3_folder_owner {
