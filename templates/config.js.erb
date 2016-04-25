@@ -8,7 +8,7 @@ function (Settings) {
 
   return new Settings({
 
-    elasticsearch: "<%= @config_es_protocol %>://<%= @config_es_server %>:<%= @config_es_port %>",
+    elasticsearch: "<%= @config_es_protocol %>://<%= @config_es_server %>:<%= @config_es_port %><%= @config_es_uri %>",
 
     default_route: '<%= @config_default_route %>',
 
